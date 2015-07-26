@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="Grafo.h" />
     <ClInclude Include="ListaAristas.h" />
+    <ClInclude Include="ListaVert.h" />
     <ClInclude Include="NodoAd.h" />
     <ClInclude Include="NodoVertice.h" />
     <ClInclude Include="stdafx.h" />
@@ -91,6 +92,7 @@
     <ClCompile Include="EjemploGrafos.cpp" />
     <ClCompile Include="Grafo.cpp" />
     <ClCompile Include="ListaAristas.cpp" />
+    <ClCompile Include="ListaVert.cpp" />
     <ClCompile Include="NodoAd.cpp" />
     <ClCompile Include="NodoVertice.cpp" />
     <ClCompile Include="stdafx.cpp">

@@ -1,6 +1,5 @@
 #pragma once
-#include "Nodo.h"
-#include "NodoVertice.h"
+#include "ListaVert.h"
 class Grafo
 {
 public:
@@ -8,7 +7,7 @@ public:
 	~Grafo();
 
 private:
-	NodoVertice * inicio;
+	ListaVert * inicio;
 	bool borrarGrafo();
 
 	bool agregarVertice(int dato);

@@ -8,5 +8,7 @@ public:
 private:
 	int dato;
 	ListaAristas *la;
+
+
 };
 
