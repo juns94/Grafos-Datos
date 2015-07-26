@@ -12,8 +12,6 @@ public:
 	ListaVert();
 	~ListaVert();
 
-
-
 	bool add(Vertice * vert);
 	bool remove(int dato);
 
