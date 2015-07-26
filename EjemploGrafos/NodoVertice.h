@@ -2,12 +2,18 @@
 #include "Vertice.h"
 class NodoVertice
 {
-public:
-	NodoVertice();
-	~NodoVertice();
 
 private:
 	Vertice *V;
 	NodoVertice *sgt;
+
+public:
+	NodoVertice();
+	NodoVertice(Vertice *nV);
+	~NodoVertice();
+
+	NodoVertice *getSgt();
+	void SetSgt(NodoVertice *);
+	Vertice *getVertice();
 };
 

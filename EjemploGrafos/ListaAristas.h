@@ -8,8 +8,8 @@ public:
 private:
 	NodoAd *Cab();
 
-	bool agregar(NodoVertice * vertice, int peso);
-	bool eliminar(NodoVertice * vertice); // elimina un nodo con vert = vertice
+	bool agregar(NodoAd * vertice, int peso);
+	bool eliminar(NodoAd * vertice); // elimina un nodo con vert = vertice
 
 };
 
