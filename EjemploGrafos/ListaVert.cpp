@@ -54,3 +54,19 @@ bool  ListaVert::remove(int dato) {
 	return r;
 }
 
+Vertice *ListaVert::get(int dato) {
+	NodoVertice *indx = inicio;
+	bool r = false;
+	while (indx != NULL && !r) {
+		if (indx->getVertice()->getDato() == dato) {
+			r = true;
+		} else {
+			indx = indx->getSgt();
+		}
+	}
+	if (indx != NULL) {
+		return indx->getVertice();
+	} else {
+		return NULL;
+	}
+}

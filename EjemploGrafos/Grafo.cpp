@@ -22,15 +22,12 @@ bool Grafo::borrarVertice(int dato) {
 }
 
 bool Grafo::unirVertices(int desde, int para, int peso) {
-
-
-	NodoAd *arista = new NodoAd();
-
+	LV->get(desde)->unirCon(LV->get(para), peso);
 	return true;
 }
 
 
 bool Grafo::borrarArista(int desde, int para) {
-
+	LV->get(desde)->romperCon(LV->get(para));
 	return true;
 }

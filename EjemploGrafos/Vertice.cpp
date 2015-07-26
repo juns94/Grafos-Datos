@@ -22,3 +22,13 @@ int Vertice::getDato() {
 void Vertice::setDato(int d) {
 	dato = d;
 }
+
+bool Vertice::unirCon(Vertice * vertice, int peso) {
+	la->agregar(vertice, peso);
+	return true;
+}
+
+bool Vertice::romperCon(Vertice * vertice) {
+	la->eliminar(vertice);
+	return true;
+}
