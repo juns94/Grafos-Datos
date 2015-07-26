@@ -1,13 +1,15 @@
 #pragma once
-#include "Nodo.h"
+
+class Vertice;
 class NodoAd
 {
-public:
-	NodoAd();
-	~NodoAd();
 private:
 	int peso;
 	NodoAd *sgt;
-	Nodo* vert;
+	Vertice* vert;
+public:
+	NodoAd();
+	~NodoAd();
+
 };
 

@@ -13,7 +13,7 @@ public:
 	~NodoVertice();
 
 	NodoVertice *getSgt();
-	void SetSgt(NodoVertice *);
+	void SetSgt(NodoVertice * nv);
 	Vertice *getVertice();
 };
 

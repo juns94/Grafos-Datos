@@ -15,7 +15,7 @@ public:
 
 
 	bool add(Vertice * vert);
-	bool remove(Vertice *vert);
+	bool remove(int dato);
 
 
 };

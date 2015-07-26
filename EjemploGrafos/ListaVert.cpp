@@ -1,15 +1,12 @@
 #include "stdafx.h"
 #include "ListaVert.h"
 
-
 ListaVert::ListaVert(){
 	inicio = NULL;
 }
 
-
 ListaVert::~ListaVert(){
 }
-
 
 NodoVertice *ListaVert::dirUltimo(){
 	NodoVertice *tmp = inicio;
@@ -32,11 +29,11 @@ bool ListaVert::add(Vertice * vert){
 	return true;
 }
 
-bool  ListaVert::remove(Vertice *vert) {
+bool  ListaVert::remove(int dato) {
 	NodoVertice *indx = inicio;
 	bool r = false;
 	if (indx != NULL) {
-		if (indx->getVertice() == vert) {
+		if (indx->getVertice()->getDato() == dato) {
 			inicio = indx->getSgt();
 			delete indx;
 			r = true;
@@ -44,7 +41,7 @@ bool  ListaVert::remove(Vertice *vert) {
 
 		while (indx != NULL && !r) {
 			if (indx->getSgt() != NULL) {
-				if (indx->getSgt()->getVertice() == vert) {
+				if (indx->getSgt()->getVertice()->getDato() == dato) {
 					NodoVertice *tmp = indx->getSgt();
 					indx->SetSgt(tmp->getSgt());
 					delete tmp;
@@ -56,3 +53,4 @@ bool  ListaVert::remove(Vertice *vert) {
 	} 
 	return r;
 }
+

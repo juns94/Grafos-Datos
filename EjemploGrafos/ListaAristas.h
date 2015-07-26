@@ -1,15 +1,17 @@
 #pragma once
 #include"NodoAd.h"
+#include"NodoVertice.h"
 class ListaAristas
 {
+private:
+	NodoAd *Cab;
+
 public:
 	ListaAristas();
-	~ListaAristas();
-private:
-	NodoAd *Cab();
+	~ListaAristas(); 
 
-	bool agregar(NodoAd * vertice, int peso);
-	bool eliminar(NodoAd * vertice); // elimina un nodo con vert = vertice
+//	bool agregar(NodoVertice * vertice, int peso);
+//bool eliminar(NodoVertice * vertice); // elimina un nodo con vert = vertice
 
 };
 
