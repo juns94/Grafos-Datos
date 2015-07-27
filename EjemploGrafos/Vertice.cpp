@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Vertice.h"
-
-
+//#include "ListaAristas.h";
 Vertice::Vertice()
 {
 }
@@ -23,12 +22,12 @@ void Vertice::setDato(int d) {
 	dato = d;
 }
 
-bool Vertice::unirCon(Vertice * vertice, int peso) {
-	la->agregar(vertice, peso);
+bool Vertice::unirCon(Vertice * vert, int peso) {
+	la->agregar(vert, peso);
 	return true;
 }
 
-bool Vertice::romperCon(Vertice * vertice) {
-	la->eliminar(vertice);
+bool Vertice::romperCon(Vertice * vert) {
+	la->eliminar(vert);
 	return true;
 }

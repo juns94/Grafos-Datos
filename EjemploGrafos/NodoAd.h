@@ -1,15 +1,17 @@
 #pragma once
-
-class Vertice;
-class NodoAd
-{
+class NodoAd {
 private:
 	int peso;
 	NodoAd *sgt;
-	Vertice* vert;
+//	Vertice* vert;
+
 public:
 	NodoAd();
+	NodoAd(int nPeso);
 	~NodoAd();
 
+	int getPeso();
+	NodoAd * getSgt();
+	void setSgt(NodoAd *);
 };
 

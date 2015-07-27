@@ -18,7 +18,10 @@ public:
 	bool unirVertices(int desde, int para, int peso);
 	bool borrarArista(int desde, int para);
 
+	bool modificarPeso(int desde, int para, int peso);
 
+	bool esAdyacente(int desde, int para);
+	bool existeVertice(int vert);
 
 };
 
