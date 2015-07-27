@@ -39,6 +39,9 @@
     <ClInclude Include="ListaVert.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NodoAd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -60,6 +63,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ListaVert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoAd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
