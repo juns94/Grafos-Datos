@@ -15,6 +15,7 @@ public:
 	bool romperCon(Vertice * vertice);
 	int getDato();
 	void setDato(int d);
+	Vertice *Adyacente(int d); //regresa el puntero al vertice d, null si no existe;
 
 };
 

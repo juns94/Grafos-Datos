@@ -31,3 +31,7 @@ bool Vertice::romperCon(Vertice * vert) {
 	la->eliminar(vert);
 	return true;
 }
+
+Vertice *Vertice::Adyacente(int d) {
+	return la->get(d);
+}
