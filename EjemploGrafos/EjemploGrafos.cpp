@@ -7,9 +7,6 @@
 Grafo *grafo; 
 
 void inicio(){
-
-
-
 	int primero;
 	int segundo;
 	

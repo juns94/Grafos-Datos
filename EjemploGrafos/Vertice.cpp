@@ -6,6 +6,7 @@ Vertice::Vertice()
 }
 
 Vertice::Vertice(int d) {
+	la = new ListaAristas();
 	dato = d;
 }
 
@@ -23,15 +24,14 @@ void Vertice::setDato(int d) {
 }
 
 bool Vertice::unirCon(Vertice * vert, int peso) {
-	la->agregar(vert, peso);
-	return true;
+	
+	return la->agregar(vert, peso);;
 }
 
 bool Vertice::romperCon(Vertice * vert) {
-	la->eliminar(vert);
-	return true;
+	return la->eliminar(vert);;
 }
 
 Vertice *Vertice::Adyacente(int d) {
-	return la->get(d);
+	return la->getVerticeDeterminado(d);
 }

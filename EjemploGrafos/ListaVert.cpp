@@ -19,14 +19,25 @@ NodoVertice *ListaVert::dirUltimo(){
 }
 
 bool ListaVert::add(Vertice * vert){
-	NodoVertice *indx = dirUltimo();
-	NodoVertice *tmp = new NodoVertice(vert);
-	if (indx == NULL) {
-		inicio = tmp;
-	} else {
-		indx->SetSgt(tmp);
+	NodoVertice *indx = inicio;
+	bool r = false;
+	while (indx != NULL && !r) {
+		if (indx->getVertice()->getDato() == vert->getDato()) {
+			r = true;
+		} else {
+			indx = indx->getSgt();
+		}
 	}
-	return true;
+	if (!r) {
+		NodoVertice *tmp = new NodoVertice(vert);
+		 indx->SetSgt(tmp);
+		 return true;
+	} else {
+		return false;
+	}
+
+
+	
 }
 
 bool  ListaVert::remove(int dato) {

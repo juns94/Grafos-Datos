@@ -1,8 +1,9 @@
 #pragma once
 class Vertice;
+#include "NodoAd.h"
 class ListaAristas {
 private:
-	//NodoAd *Cab;
+	NodoAd *Cab;
 
 public:
 	ListaAristas();
@@ -10,6 +11,6 @@ public:
 
 	bool agregar(Vertice * vert, int peso);
 	bool eliminar(Vertice * vert); // elimina un nodo con vert = vertice
+	Vertice * getVerticeDeterminado(int d);
 
 };
-

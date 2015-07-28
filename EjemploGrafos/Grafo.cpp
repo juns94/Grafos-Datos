@@ -3,6 +3,7 @@
 
 
 Grafo::Grafo() {
+	LV = new ListaVert();
 }
 
 
