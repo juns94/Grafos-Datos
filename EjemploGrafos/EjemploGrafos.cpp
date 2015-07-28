@@ -58,21 +58,53 @@ void inicio(){
 
 			switch (opc){
 			
-			case 1:{
+			case 1:{ //agregar vertice, arista es raya
+				cout << "Ingrese el dato del nuevo vertice." << endl;
+				int dato;
+				cin >> dato;
+				
+				
+				if(grafo->agregarVertice(dato))
+					cout << "Dato ingresado correctamente" << endl;
+				else
 
-			//	add();
+					cout << "Dato ya existente" << endl;
 				break;
 			}
 
 			case 2:{
+				cout << "Ingrese el  valor del dato para eliminar." << endl;
+				int dato;
+				cin >> dato;
 
-			//	add(ls);
+				if (grafo->borrarVertice(dato))
+					cout << "Dato eliminado correctamente" << endl;
+				else
+
+					cout << "El dato no se encuentra." << endl;
 
 				break; }
 
 			case 3:{
-			//	addDesc(ls);
 
+				int dato, dato2, dato3;
+
+				cout << "Favor ingresar el dato fuente" << endl;
+				cin >> dato;
+				cout << "Favor ingresar el dato destino" << endl;
+				cin >> dato2;
+				cout << "Favor ingresar el peso de la arista" << endl;
+				cin >> dato3;
+
+				if (grafo->unirVertices(dato, dato2, dato3))
+					cout << "Dato ingresado correctamente" << endl;
+				else
+
+					cout << "No se pudo realizar esta operacion debido a errores con los valores numericos" << endl;
+
+
+			//	addDesc(ls);
+				/*
 				int opcA;
 
 				cout << "Que operacion de vertice quiere hacer?" << endl;
@@ -87,7 +119,18 @@ void inicio(){
 
 				case 1:{
 
+					int dato, dato2;
 
+					cout << "Favor ingresar el dato nodo" << endl;
+					cin >> dato;	
+					cout << "Favor ingresar el dato peso" << endl;
+					cin >> dato2;
+
+					if (grafo->unirVertices(dato, dato2))
+						cout << "Dato ingresado correctamente" << endl;
+					else
+
+						cout << "No se pudo realizar esta operacion debido a errores con los valores numericos" << endl;
 					
 
 					//	add();
@@ -95,18 +138,44 @@ void inicio(){
 				}
 
 				case 2:{
+					int dato, dato2, dato3;
 
-					//	add(ls);
+					cout << "Favor ingresar el dato fuente" << endl;
+					cin >> dato;
+					cout << "Favor ingresar el dato destino" << endl;
+					cin >> dato2;
+					cout << "Favor ingresar el peso de la arista" << endl;
+					cin >> dato3;
+
+					if (grafo->borrarArista(dato, dato2,dato3))
+						cout << "Dato ingresado correctamente" << endl;
+					else
+
+						cout << "No se pudo realizar esta operacion debido a errores con los valores numericos" << endl;
+
 
 					break; }
 
 				case 3:{
 
-					//	add(ls);
+					int dato, dato2;
+
+					cout << "Favor ingresar el dato fuente" << endl;
+					cin >> dato;
+					cout << "Favor ingresar el dato destino" << endl;
+					cin >> dato2;
+
+					if (grafo->borrarArista(dato, dato2))
+						cout << "Dato ingresado correctamente" << endl;
+					else
+
+						cout << "No se pudo realizar esta operacion debido a errores con los valores numericos" << endl;
+
+
 
 					break; }
 				}
-
+*/
 
 				break; }
 
@@ -132,6 +201,8 @@ void inicio(){
 
 				cout << " Desplegando todas los vertices: " << endl;
 				
+
+
 				//	add(ls);
 
 				break; }
