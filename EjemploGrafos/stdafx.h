@@ -10,6 +10,12 @@
 #include <stdio.h>
 #include <tchar.h>
 #include "Vertice.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
+
 
 
 
