@@ -41,6 +41,8 @@ void inicio(){
 		cout << "		(2) Borrar Vertice" << endl;
 		cout << "		(3) Agregar Arista" << endl;
 		cout << "		(4) Eliminar Arista" << endl;
+		cout << "		(5) Desplegar Arista" << endl;
+		cout << "		(6) Desplegar Vertice" << endl;
 		cout << "		(0) Salir" << endl;
 
 		cout << endl;
@@ -105,6 +107,32 @@ void inicio(){
 					break; }
 				}
 
+
+				break; }
+
+			case 4:{
+
+				//	add(ls);
+
+				break; }
+
+
+			case 5:{
+
+
+				cout << " Desplegando todas los aristas: " << endl;
+
+
+				//	add(ls);
+
+				break; }
+
+
+			case 6:{
+
+				cout << " Desplegando todas los vertices: " << endl;
+				
+				//	add(ls);
 
 				break; }
 
