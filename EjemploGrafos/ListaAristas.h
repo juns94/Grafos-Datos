@@ -9,8 +9,9 @@ public:
 	ListaAristas();
 	~ListaAristas();
 
-	bool agregar(Vertice * vert, int peso);
-	bool eliminar(Vertice * vert); // elimina un nodo con vert = vertice
-	Vertice * getVerticeDeterminado(int d);
-
+	bool agregar(Vertice *&vert, int peso);
+	bool eliminar(Vertice * &vert); // elimina un nodo con vert = vertice
+	Vertice * getVerticeDeterminado(int d); //regresa el vertice con el dato d; null si no lo encuentra
+	NodoAd *getCab();
+	void print();
 };

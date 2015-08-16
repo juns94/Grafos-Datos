@@ -11,13 +11,18 @@ Grafo::~Grafo() {
 }
 
 bool Grafo::agregarVertice(int dato) {
-	LV->add(new Vertice(dato));
-	return true;
+	
+	return LV->add(new Vertice(dato));
 }
 
 bool Grafo::borrarVertice(int dato) {
-	LV->remove(dato);
-	return true;
+	NodoVertice *nv = LV->getInicio();
+	Vertice *v = LV->get(dato);
+	while (nv != NULL) {
+		nv->getVertice()->romperCon(v);
+		nv = nv->getSgt();
+	}
+	return LV->remove(dato);
 }
 
 bool Grafo::unirVertices(int desde, int para, int peso) {
@@ -25,6 +30,7 @@ bool Grafo::unirVertices(int desde, int para, int peso) {
 	Vertice * p = LV->get(para);
 	if (d != NULL && p != NULL) {
 		d->unirCon(p, peso);
+		p->unirCon(d, peso);
 		return true;
 	} else {
 		return false;
@@ -36,7 +42,7 @@ bool Grafo::borrarArista(int desde, int para) {
 	Vertice * d = LV->get(desde);
 	Vertice * p = LV->get(para);
 	if (d != NULL && p != NULL) {
-		return LV->get(desde)->romperCon(LV->get(para));
+		return LV->get(desde)->romperCon(LV->get(para)) && LV->get(para)->romperCon(LV->get(desde));
 	} else {
 		return false;
 	}
@@ -61,4 +67,13 @@ bool Grafo::esAdyacente(int desde, int para) {
 
 bool Grafo::existeVertice(int vert) {
 	return (LV->get(vert) != NULL);
+}
+
+
+ListaVert* Grafo::prim() {
+	return LV->prim();
+}
+
+void Grafo::print() {
+	LV->print();
 }

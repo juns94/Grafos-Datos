@@ -9,14 +9,28 @@ Grafo *grafo;
 void inicio(){
 	int primero;
 	int segundo;
-	
+	grafo->agregarVertice(1);
+	grafo->agregarVertice(2);
+	grafo->agregarVertice(3);
+	grafo->agregarVertice(4);
+	grafo->agregarVertice(5);
+	grafo->agregarVertice(6);
+	grafo->unirVertices(1,2,9);
+	grafo->unirVertices(1,5,8);
+	grafo->unirVertices(1,6,1);
+	grafo->unirVertices(2,6,2);
+	grafo->unirVertices(2,3,3);
+	grafo->unirVertices(3,6,4);
+	grafo->unirVertices(3,4,5);
+	grafo->unirVertices(4,5,7);
+	grafo->unirVertices(5,6,6);
 	int opc;
 	do{
 
 		system("cls");
 		cout << endl;
 		cout <<	 "	  -----	Pruebas de Grafos Dinamicos -----" << endl;
-
+		grafo->print();
 		cout << endl;
 		cout << endl;
 		cout << endl;
@@ -40,6 +54,9 @@ void inicio(){
 		cout << "		(4) Eliminar Arista" << endl;
 		cout << "		(5) Desplegar Arista" << endl;
 		cout << "		(6) Desplegar Vertice" << endl;
+		cout << "		(7) Mostrar Arbol minimo(Prim)" << endl;
+		cout << "		(8) Mostrar Arbol minimo(Kruskal)" << endl;
+		cout << "		(9) Mostrar grafo" << endl;
 		cout << "		(0) Salir" << endl;
 
 		cout << endl;
@@ -100,80 +117,6 @@ void inicio(){
 					cout << "No se pudo realizar esta operacion debido a errores con los valores numericos" << endl;
 
 
-			//	addDesc(ls);
-				/*
-				int opcA;
-
-				cout << "Que operacion de vertice quiere hacer?" << endl;
-				cout << "(1) agregarArista(tObjeto *fuente, tObjeto *destino);" << endl;
-				cout << "(2) agregarArista(tObjeto *nodo, int peso);" << endl;
-				cout << "(3) agregarArista(tObjeto *fuente, tObjeto *destino, int peso);" << endl;
-				cout << "(0) regresar al menu principal" << endl;
-				cin >> opcA;
-
-				switch (opcA){
-
-
-				case 1:{
-
-					int dato, dato2;
-
-					cout << "Favor ingresar el dato nodo" << endl;
-					cin >> dato;	
-					cout << "Favor ingresar el dato peso" << endl;
-					cin >> dato2;
-
-					if (grafo->unirVertices(dato, dato2))
-						cout << "Dato ingresado correctamente" << endl;
-					else
-
-						cout << "No se pudo realizar esta operacion debido a errores con los valores numericos" << endl;
-					
-
-					//	add();
-					break;
-				}
-
-				case 2:{
-					int dato, dato2, dato3;
-
-					cout << "Favor ingresar el dato fuente" << endl;
-					cin >> dato;
-					cout << "Favor ingresar el dato destino" << endl;
-					cin >> dato2;
-					cout << "Favor ingresar el peso de la arista" << endl;
-					cin >> dato3;
-
-					if (grafo->borrarArista(dato, dato2,dato3))
-						cout << "Dato ingresado correctamente" << endl;
-					else
-
-						cout << "No se pudo realizar esta operacion debido a errores con los valores numericos" << endl;
-
-
-					break; }
-
-				case 3:{
-
-					int dato, dato2;
-
-					cout << "Favor ingresar el dato fuente" << endl;
-					cin >> dato;
-					cout << "Favor ingresar el dato destino" << endl;
-					cin >> dato2;
-
-					if (grafo->borrarArista(dato, dato2))
-						cout << "Dato ingresado correctamente" << endl;
-					else
-
-						cout << "No se pudo realizar esta operacion debido a errores con los valores numericos" << endl;
-
-
-
-					break; }
-				}
-*/
-
 				break; }
 
 			case 4:{
@@ -195,17 +138,40 @@ void inicio(){
 
 
 			case 6:{
-
 				cout << " Desplegando todas los vertices: " << endl;
 				
+				break; }
 
+
+
+			case 7:{
+
+				cout << " Desplegando arbol minimo: " << endl;
+				ListaVert *lv = grafo->prim();
+				lv->print();
 
 				//	add(ls);
 
 				break; }
+		
+			case 8:{
+				cout << " Desplegando todas los vertices: " << endl;
 
 
-	
+
+
+
+
+				break; }
+				   case 9:{
+				cout << " Desplegando el grafo: " << endl;
+				grafo->print();
+				
+
+
+				
+
+				break; }
 
 
 			default:{ cout << "OPCION INVALIDA" << endl;

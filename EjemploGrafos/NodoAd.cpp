@@ -10,12 +10,12 @@ NodoAd::NodoAd() {
 NodoAd::~NodoAd() {
 }
 
-NodoAd::NodoAd(Vertice* nVert, int nPeso) {
+NodoAd::NodoAd(Vertice* &nVert, int nPeso) {
 	peso = nPeso;
 	vert = nVert;
 	sgt = NULL;
 }
-NodoAd::NodoAd(Vertice* nVert) {
+NodoAd::NodoAd(Vertice* &nVert) {
 	vert = nVert;
 	sgt = NULL;
 }

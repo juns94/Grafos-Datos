@@ -23,6 +23,9 @@ public:
 	bool esAdyacente(int desde, int para);
 	bool existeVertice(int vert);
 
+	ListaVert *prim();
+	void print();
+
 };
 
 

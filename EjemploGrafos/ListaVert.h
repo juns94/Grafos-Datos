@@ -6,7 +6,7 @@ class ListaVert
 private:
 	NodoVertice *inicio;
 	NodoVertice *dirUltimo();
-
+	ListaVert *primRec(ListaVert *);
 
 public:
 	ListaVert();
@@ -14,8 +14,10 @@ public:
 
 	bool add(Vertice * vert);
 	bool remove(int dato);
-	Vertice *get(int dato);
-
+	Vertice *get(int dato); //regresa el vertice con el dato d;
+	ListaVert *prim();
+	NodoVertice * getInicio();
+	void print();
 
 };
 

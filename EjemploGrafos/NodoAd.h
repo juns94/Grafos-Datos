@@ -7,8 +7,8 @@ private:
 
 public:
 	NodoAd();
-	NodoAd(Vertice* nVert);
-	NodoAd(Vertice* nVert, int nPeso);
+	NodoAd(Vertice*& nVert);
+	NodoAd(Vertice*& nVert, int nPeso);
 	~NodoAd();
 
 

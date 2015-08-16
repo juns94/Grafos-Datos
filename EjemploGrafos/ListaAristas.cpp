@@ -10,41 +10,43 @@ ListaAristas::~ListaAristas() {
 }
 
 
-bool ListaAristas::agregar(Vertice * vert, int peso) {
+bool ListaAristas::agregar(Vertice *& vert, int peso) {
 	NodoAd* ingreso = new NodoAd(vert, peso);
-	NodoAd* aux;
-	aux = Cab;
 	if (Cab == NULL) {
-		Cab->setSgt(ingreso);
+		Cab = ingreso;
 	} else {
-		do {
-			if (aux->getSgt() == NULL) {
-				aux->setSgt(ingreso);
-			}
+		NodoAd* aux = Cab;
+		while (aux->getSgt() != NULL) {
 			aux = aux->getSgt();
-		} while (aux->getSgt() != NULL);
+		}
+		aux->setSgt(ingreso);
 	}
 	return true;
 }
 
 
-bool ListaAristas::eliminar(Vertice * vert) {
-	NodoAd* ingreso = new NodoAd(vert);
-	NodoAd* aux;
-	aux = Cab;
-	if (Cab == NULL) {
-		return false;
-	} else {
-		do {
-			if (aux->getSgt()->getVert() == vert) {
+bool ListaAristas::eliminar(Vertice * &vert) {
+	NodoAd* aux = Cab;
+	bool borrado = false;
+	if (aux != NULL) {
+		if (aux->getVert()->getDato() == vert->getDato()) {
+			Cab = aux->getSgt();
+			delete aux;
+			return true;
+		}
+	}
+	while (aux != NULL) {
+		if (aux->getSgt() != NULL) {
+			if (aux->getSgt()->getVert()->getDato() == vert->getDato()) {
 				NodoAd * temp = aux->getSgt();
 				aux->setSgt(aux->getSgt()->getSgt());
 				delete temp;
 			}
-			aux = aux->getSgt();
-		} while (aux->getSgt() != NULL);
+		}
+		aux = aux->getSgt();
 	}
-	return true;
+
+	return borrado;
 }
 
 Vertice* ListaAristas::getVerticeDeterminado(int d) {
@@ -62,5 +64,17 @@ Vertice* ListaAristas::getVerticeDeterminado(int d) {
 			aux = aux->getSgt();
 		} while (aux->getSgt() != NULL && encontrado != true);
 		return vert;
+	}
+}
+
+NodoAd *ListaAristas::getCab() {
+	return Cab;
+}
+
+void ListaAristas::print() {
+	NodoAd *tmp = Cab;
+	while (tmp != NULL) {
+		cout << "(D=> " << tmp->getVert()->getDato() << ", W=> " << tmp->getPeso() << ") ";
+		tmp = tmp->getSgt();
 	}
 }

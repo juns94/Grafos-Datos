@@ -35,3 +35,8 @@ bool Vertice::romperCon(Vertice * vert) {
 Vertice *Vertice::Adyacente(int d) {
 	return la->getVerticeDeterminado(d);
 }
+
+ListaAristas *Vertice::getListaAristas() {
+
+	return la;
+}
