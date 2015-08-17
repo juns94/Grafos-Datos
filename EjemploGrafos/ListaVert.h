@@ -17,6 +17,8 @@ public:
 	Vertice *get(int dato); //regresa el vertice con el dato d;
 	ListaVert *prim();
 	ListaVert *kruskal();
+	ListaVert *profundidad();
+	ListaVert *djikstra();
 	NodoVertice * getInicio();
 	void print();
 
