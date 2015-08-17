@@ -157,29 +157,54 @@ ListaVert *ListaVert::kruskal() {
 	ListaVert *kr = new ListaVert();
 	int krSize = 0;
 	int lvSize = 0;
-
-	Vertice *vOrigen = NULL;
-	NodoAd *aMenor = NULL;
-
-	NodoVertice *vIndx = inicio;
-	while (vIndx != NULL) {
-		NodoAd *aIndex = vIndx->getVertice()->getListaAristas()->getCab();
-		while (aIndex != NULL) {
-			if (aMenor == NULL) {
-				vOrigen = vIndx->getVertice();
-				aMenor = aIndex;
-			} else {
-				if (aMenor->getPeso() > aIndex->getPeso()) {
-					vOrigen = vIndx->getVertice();
-					aMenor = aIndex;
+	NodoVertice *vIndx;
+	NodoAd *aIndex;
+	do { //Ciclo kruskal
+		vIndx = inicio;
+		Vertice *vOrigen = NULL;
+		NodoAd *aMenor = NULL;
+		lvSize = 0;
+		while (vIndx != NULL) {   //ciclo vertices
+			
+			aIndex = vIndx->getVertice()->getListaAristas()->getCab();
+			while (aIndex != NULL) {   //ciclo aristas 
+				if ((kr->get(vIndx->getVertice()->getDato()) == NULL) || (kr->get(aIndex->getVert()->getDato() == NULL))) {
+					if (aMenor == NULL) {
+						vOrigen = vIndx->getVertice();
+						aMenor = aIndex;
+					} else {
+						if (aMenor->getPeso() > aIndex->getPeso()) {
+							vOrigen = vIndx->getVertice();
+							aMenor = aIndex;
+						}
+					}
 				}
+				aIndex = aIndex->getSgt();
+			} //fin ciclo aristas
+			vIndx = vIndx->getSgt();
+
+			lvSize++;
+		}//fin cico vertices
+		if (aMenor != NULL) {
+			int desde = vOrigen->getDato();
+			int para = aMenor->getVert()->getDato();
+			int peso = aMenor->getPeso();
+			if (kr->add(new Vertice(desde))) {
+				krSize++;
 			}
-			aIndex = aIndex->getSgt();
+			if (kr->add(new Vertice(para))) {
+				krSize++;
+			}
+			kr->get(desde)->unirCon(kr->get(para), peso);
+			kr->get(para)->unirCon(kr->get(desde), peso);
+
+		} else {
+			ListaVert *lv = new ListaVert();
+			lv->add(new Vertice(-1));
+			return lv;
 		}
-		vIndx = vIndx->getSgt();
 
-	}
-
+	} while (krSize != lvSize);  //fin ciclo kruskal
 
 	return kr;
 }
@@ -187,7 +212,7 @@ ListaVert *ListaVert::kruskal() {
 void ListaVert::print() {
 	NodoVertice *tmp = inicio;
 	while (tmp != NULL) {
-		cout << "V" << tmp->getVertice()->getDato();
+		cout << "V" << tmp->getVertice()->getDato() << ">>";
 		tmp->getVertice()->getListaAristas()->print();
 		cout << endl;
 		tmp = tmp->getSgt();

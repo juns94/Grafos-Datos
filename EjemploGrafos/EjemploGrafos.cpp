@@ -149,18 +149,13 @@ void inicio(){
 				cout << " Desplegando arbol minimo: " << endl;
 				ListaVert *lv = grafo->prim();
 				lv->print();
-
-				//	add(ls);
-
 				break; }
 		
 			case 8:{
 				cout << " Desplegando arbol minimo: " << endl;
 
 				ListaVert *lv = grafo->kruskal();
-
-
-
+				lv->print();
 
 				break; }
 				   case 9:{
