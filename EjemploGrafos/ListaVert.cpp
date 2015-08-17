@@ -210,11 +210,26 @@ ListaVert *ListaVert::kruskal() {
 }
 
 
-void ListaVert::phelp(ListaVert *lista){
+void ListaVert::phelp(ListaVert *lista , Vertice *v){
 
 
+	if (v->getVisited() == 0){
+
+		lista->add(new Vertice(v->getDato()));
+		v->setVisited();
+
+		cout << v->getVisited() << endl;
+		phelp(lista, v->getListaAristas()->getCab()->getVert());
+	} 
 
 
+		//system("pause");
+		//phelp(lista, v->getListaAristas()->getCab()->getVert());
+		
+
+	
+
+		
 
 }
 ListaVert *ListaVert::profundidad() {
@@ -229,8 +244,13 @@ ListaVert *ListaVert::profundidad() {
 		NodoAd *aMenor = NULL;
 
 
+
+
+		phelp( pr , vIndx->getVertice());
+
+		
 		while (vIndx != NULL) {
-			if (!vIndx->getVertice()->getVisited()){
+			if (vIndx->getVertice()->getVisited() == 0){
 
 
 				pr->add(new Vertice(vIndx->getVertice()->getDato()));
@@ -238,8 +258,10 @@ ListaVert *ListaVert::profundidad() {
 			}
 
 			vIndx = vIndx->getSgt();
-			//cout << "Trapped" << endl;
+		
 		}
+		
+
 
 		/*
 		   //ciclo vertices

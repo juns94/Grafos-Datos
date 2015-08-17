@@ -5,7 +5,7 @@ class Vertice {
 private:
 	int dato;
 	ListaAristas *la;
-	bool visited;
+	int visited;
 
 public:
 	Vertice();
@@ -18,7 +18,7 @@ public:
 	void setDato(int d);
 	Vertice *Adyacente(int d); //regresa el puntero al vertice d, null si no existe;
 	ListaAristas * getListaAristas();
-	bool getVisited();
+	int getVisited();
 	void setVisited();
 
 };

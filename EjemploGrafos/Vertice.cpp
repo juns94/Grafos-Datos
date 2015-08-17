@@ -8,6 +8,7 @@ Vertice::Vertice()
 Vertice::Vertice(int d) {
 	la = new ListaAristas();
 	dato = d;
+	visited = 0;
 }
 
 
@@ -40,12 +41,12 @@ ListaAristas *Vertice::getListaAristas() {
 	return la;
 }
 
-bool Vertice::getVisited() {
+int Vertice::getVisited() {
 	return visited;
 
 }
 
 void Vertice::setVisited() {
-	this->visited = true;
+	this->visited = 1;
 }
 
