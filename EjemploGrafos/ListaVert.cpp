@@ -210,8 +210,63 @@ ListaVert *ListaVert::kruskal() {
 }
 
 
+void ListaVert::phelp(ListaVert *lista){
 
+
+
+
+
+}
 ListaVert *ListaVert::profundidad() {
+	ListaVert *pr = new ListaVert();
+	int krSize = 0;
+	int lvSize = 0;
+	NodoVertice *vIndx;
+	NodoAd *aIndex;
+	do { //Ciclo kruskal
+		vIndx = inicio;
+		Vertice *vOrigen = NULL;
+		NodoAd *aMenor = NULL;
+		lvSize = 0;
+
+
+
+
+
+		/*
+		while (vIndx != NULL) {   //ciclo vertices
+
+			aIndex = vIndx->getVertice()->getListaAristas()->getCab();
+			while (aIndex != NULL) {   //ciclo aristas 
+				if ((pr->get(vIndx->getVertice()->getDato()) == NULL) || (pr->get(aIndex->getVert()->getDato() == NULL))) {
+					if (aMenor == NULL) {
+						vOrigen = vIndx->getVertice();
+						aMenor = aIndex;
+					}
+					else {
+						if (aMenor->getPeso() > aIndex->getPeso()) {
+							vOrigen = vIndx->getVertice();
+							aMenor = aIndex;
+						}
+					}
+				}
+				aIndex = aIndex->getSgt();
+			} //fin ciclo aristas
+			vIndx = vIndx->getSgt();
+
+			lvSize++;
+		}//fin cico vertices
+		*/
+
+	} while (krSize != lvSize);  //fin ciclo 
+	
+	return pr;
+}
+
+
+
+
+ListaVert *ListaVert::djikstra() {
 	ListaVert *kr = new ListaVert();
 	int krSize = 0;
 	int lvSize = 0;
@@ -268,6 +323,7 @@ ListaVert *ListaVert::profundidad() {
 
 	return kr;
 }
+
 
 void ListaVert::print() {
 	NodoVertice *tmp = inicio;

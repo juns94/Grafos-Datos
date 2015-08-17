@@ -24,6 +24,10 @@ public:
 	bool existeVertice(int vert);
 
 	ListaVert *prim();
+
+	ListaVert *profundidad();
+
+	ListaVert *djikstra();
 	ListaVert *kruskal();
 	void print();
 

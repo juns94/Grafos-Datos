@@ -56,7 +56,9 @@ void inicio(){
 		cout << "		(6) Desplegar Vertice" << endl;
 		cout << "		(7) Mostrar Arbol minimo(Prim)" << endl;
 		cout << "		(8) Mostrar Arbol minimo(Kruskal)" << endl;
-		cout << "		(9) Mostrar grafo" << endl;
+		cout << "		(9) Mostrar profundidad" << endl;
+		cout << "		(10) Mostrar Djikstra" << endl;
+		cout << "		(11) Mostrar grafo" << endl;
 		cout << "		(0) Salir" << endl;
 
 		cout << endl;
@@ -158,7 +160,22 @@ void inicio(){
 				lv->print();
 
 				break; }
-				   case 9:{
+			case 9:{
+				cout << " Desplegando arbol por profundidad: " << endl;
+
+				ListaVert *lv = grafo->kruskal();
+				lv->print();
+
+				break; }
+
+			case 10:{
+				cout << " Desplegando djikstra: " << endl;
+
+				ListaVert *lv = grafo->djikstra();
+				lv->print();
+
+				break; }
+				   case 11:{
 				cout << " Desplegando el grafo: " << endl;
 				grafo->print();
 				

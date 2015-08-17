@@ -77,7 +77,13 @@ ListaVert* Grafo::prim() {
 ListaVert* Grafo::kruskal() {
 	return LV->kruskal();
 }
+ListaVert* Grafo::profundidad() {
+	return LV->profundidad();
+}
 
+ListaVert* Grafo::djikstra() {
+	return LV->djikstra();
+}
 void Grafo::print() {
 	LV->print();
 }

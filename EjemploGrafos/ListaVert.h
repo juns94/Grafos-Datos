@@ -19,6 +19,7 @@ public:
 	ListaVert *kruskal();
 	ListaVert *profundidad();
 	ListaVert *djikstra();
+	void phelp( ListaVert* v);
 	NodoVertice * getInicio();
 	void print();
 

@@ -39,3 +39,13 @@ ListaAristas *Vertice::getListaAristas() {
 
 	return la;
 }
+
+bool Vertice::getVisited() {
+	return visited;
+
+}
+
+void Vertice::setVisited() {
+	this->visited = true;
+}
+
