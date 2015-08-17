@@ -223,50 +223,65 @@ ListaVert *ListaVert::profundidad() {
 	int lvSize = 0;
 	NodoVertice *vIndx;
 	NodoAd *aIndex;
-	do { //Ciclo kruskal
+
 		vIndx = inicio;
 		Vertice *vOrigen = NULL;
 		NodoAd *aMenor = NULL;
-		lvSize = 0;
 
 
+		while (vIndx != NULL) {
+			if (!vIndx->getVertice()->getVisited()){
 
 
+				pr->add(new Vertice(vIndx->getVertice()->getDato()));
+				vIndx->getVertice()->setVisited();
+			}
+
+			vIndx = vIndx->getSgt();
+			//cout << "Trapped" << endl;
+		}
 
 		/*
-		while (vIndx != NULL) {   //ciclo vertices
+		   //ciclo vertices
 
-			aIndex = vIndx->getVertice()->getListaAristas()->getCab();
-			while (aIndex != NULL) {   //ciclo aristas 
-				if ((pr->get(vIndx->getVertice()->getDato()) == NULL) || (pr->get(aIndex->getVert()->getDato() == NULL))) {
-					if (aMenor == NULL) {
-						vOrigen = vIndx->getVertice();
-						aMenor = aIndex;
-					}
-					else {
-						if (aMenor->getPeso() > aIndex->getPeso()) {
-							vOrigen = vIndx->getVertice();
-							aMenor = aIndex;
-						}
-					}
-				}
-				aIndex = aIndex->getSgt();
-			} //fin ciclo aristas
-			vIndx = vIndx->getSgt();
+		   aIndex = vIndx->getVertice()->getListaAristas()->getCab();
+		   while (aIndex != NULL) {   //ciclo aristas
+		   if ((pr->get(vIndx->getVertice()->getDato()) == NULL) || (pr->get(aIndex->getVert()->getDato() == NULL))) {
+		   if (aMenor == NULL) {
+		   vOrigen = vIndx->getVertice();
+		   aMenor = aIndex;
+		   }
+		   else {
+		   if (aMenor->getPeso() > aIndex->getPeso()) {
+		   vOrigen = vIndx->getVertice();
+		   aMenor = aIndex;
+		   }
+		   }
+		   }
+		   aIndex = aIndex->getSgt();
+		   } //fin ciclo aristas
 
-			lvSize++;
-		}//fin cico vertices
-		*/
 
-	} while (krSize != lvSize);  //fin ciclo 
-	
-	return pr;
-}
+
+		   }//fin cico vertices
+		   */
+
+
+
+
+		//} while (vIndx != NULL);  //fin ciclo 
+
+		return pr;
+
+	}
+
 
 
 
 
 ListaVert *ListaVert::djikstra() {
+
+
 	ListaVert *kr = new ListaVert();
 	int krSize = 0;
 	int lvSize = 0;

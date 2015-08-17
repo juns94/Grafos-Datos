@@ -163,7 +163,7 @@ void inicio(){
 			case 9:{
 				cout << " Desplegando arbol por profundidad: " << endl;
 
-				ListaVert *lv = grafo->kruskal();
+				ListaVert *lv = grafo->profundidad();
 				lv->print();
 
 				break; }
