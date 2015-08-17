@@ -74,6 +74,10 @@ ListaVert* Grafo::prim() {
 	return LV->prim();
 }
 
+ListaVert* Grafo::kruskal() {
+	return LV->kruskal();
+}
+
 void Grafo::print() {
 	LV->print();
 }

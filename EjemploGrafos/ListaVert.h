@@ -16,6 +16,7 @@ public:
 	bool remove(int dato);
 	Vertice *get(int dato); //regresa el vertice con el dato d;
 	ListaVert *prim();
+	ListaVert *kruskal();
 	NodoVertice * getInicio();
 	void print();
 

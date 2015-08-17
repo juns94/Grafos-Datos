@@ -23,8 +23,7 @@ void Vertice::setDato(int d) {
 	dato = d;
 }
 
-bool Vertice::unirCon(Vertice * vert, int peso) {
-	
+bool Vertice::unirCon(Vertice * vert, int peso) {	
 	return la->agregar(vert, peso);;
 }
 

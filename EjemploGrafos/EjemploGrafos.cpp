@@ -155,9 +155,9 @@ void inicio(){
 				break; }
 		
 			case 8:{
-				cout << " Desplegando todas los vertices: " << endl;
+				cout << " Desplegando arbol minimo: " << endl;
 
-
+				ListaVert *lv = grafo->kruskal();
 
 
 

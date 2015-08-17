@@ -26,9 +26,9 @@ bool ListaVert::add(Vertice * vert) {
 		inicio = tmp;
 		return true;
 	}
-	
 
-	while (indx->getSgt() != NULL && !found){
+
+	while (indx->getSgt() != NULL && !found) {
 		if (indx->getVertice()->getDato() == vert->getDato()) {
 			found = true;
 		} else {
@@ -127,15 +127,16 @@ ListaVert *ListaVert::primRec(ListaVert* pr) {
 	int w = 1000000;
 
 	do {
-		Vertice *Vtmp = tmp->getVertice();
-		ListaAristas *la = Vtmp->getListaAristas();
+		Vertice *vIndx = tmp->getVertice();
+		ListaAristas *la = get(tmp->getVertice()->getDato())->getListaAristas();
 		NodoAd *indx = la->getCab();
+
 
 		while (indx != NULL) {
 			if (pr->get(indx->getVert()->getDato()) == NULL && indx->getPeso() < w) {
+				va = vIndx;
 				w = indx->getPeso();
 				na = indx;
-				va = Vtmp;
 			}
 			indx = indx->getSgt();
 		}
@@ -146,10 +147,41 @@ ListaVert *ListaVert::primRec(ListaVert* pr) {
 		Vertice *nuevo = new Vertice(na->getVert()->getDato());
 		pr->add(nuevo);
 		va->unirCon(nuevo, na->getPeso());
-		//	nuevo->unirCon(va, na->getPeso());
+		nuevo->unirCon(va, na->getPeso());
 		primRec(pr);
 	}
 	return pr;
+}
+
+ListaVert *ListaVert::kruskal() {
+	ListaVert *kr = new ListaVert();
+	int krSize = 0;
+	int lvSize = 0;
+
+	Vertice *vOrigen = NULL;
+	NodoAd *aMenor = NULL;
+
+	NodoVertice *vIndx = inicio;
+	while (vIndx != NULL) {
+		NodoAd *aIndex = vIndx->getVertice()->getListaAristas()->getCab();
+		while (aIndex != NULL) {
+			if (aMenor == NULL) {
+				vOrigen = vIndx->getVertice();
+				aMenor = aIndex;
+			} else {
+				if (aMenor->getPeso() > aIndex->getPeso()) {
+					vOrigen = vIndx->getVertice();
+					aMenor = aIndex;
+				}
+			}
+			aIndex = aIndex->getSgt();
+		}
+		vIndx = vIndx->getSgt();
+
+	}
+
+
+	return kr;
 }
 
 void ListaVert::print() {
